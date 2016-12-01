@@ -1,0 +1,22 @@
+
+{% extends 'exam/base.html' %}
+{% block body %}
+    <table class="table table-striped">
+    <tr>
+        {% if candidate.is_staff %}
+        <th>User ID</th>
+        {% endif %}
+    <th>Exam Name</th>
+    <th>Marks</th>
+    </tr>
+  {% for result  in report %}
+      <tr>
+        {% if candidate.is_staff %}
+            <td>{{ result.user }}</td>
+        {% endif %}
+          <td>{{ result.exam }}</td>
+          <td> {{ result.marks }}</td>
+      </tr>
+  {% endfor %}
+    </table>
+{% endblock %}

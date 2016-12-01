@@ -1,0 +1,19 @@
+{% extends 'exam/base.html' %}
+{% block body %}
+{% if exam_list %}
+
+    {% for exam in exam_list %}
+        <div class="view"><a href="{% url 'exam:detail' exam.pk %}" class="link">{{ exam.exam_name }}</a>
+            <br>
+        Date published:<span class="data">{{ exam.date_published}}</span>&nbsp;
+            &nbsp;&nbsp;
+        Duration:<span class="data">{{ exam.duration }}</span>
+        <button class="btn btn-success submit">Submit</button>
+        </div>
+        <br>
+    {% endfor %}
+
+{% else %}
+    <p>No Exam available</p>
+{% endif %}
+{% endblock %}

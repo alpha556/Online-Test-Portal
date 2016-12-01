@@ -1,0 +1,21 @@
+{% extends 'exam/base.html' %}
+{% block body %}
+<h1 class="page-header text-center text-primary ">{{ exam.exam_name }}</h1>
+
+<form action="{% url 'exam:submit' exam.id %}" method="post">
+    {% csrf_token %}
+    {% for questions in exam.question_set.all %}
+        <p>{{ forloop.counter }}. {{ questions.question_text }}</p>
+        <input type="radio" name="{{ questions.id }}" id="{{ questions.id }}1" value="1" />
+        <label for="{{ questions.id }}1">{{ questions.option1 }}</label><br />
+        <input type="radio" name="{{ questions.id }}" id="{{ questions.id }}2" value="2" />
+        <label for="{{ questions.id }}2">{{ questions.option2 }}</label><br />
+        <input type="radio" name="{{ questions.id }}" id="{{ questions.id }}3" value="3" />
+        <label for="{{ questions.id }}3">{{ questions.option3 }}</label><br />
+        <input type="radio" name="{{ questions.id }}" id="{{ questions.id }}4" value="4" />
+        <label for="{{ questions.id }}4">{{ questions.option4 }}</label><br />
+        <hr>
+    {% endfor %}
+    <input type="submit" value="Submit" class="btn btn-danger center-block"/>
+</form>
+{% endblock %}

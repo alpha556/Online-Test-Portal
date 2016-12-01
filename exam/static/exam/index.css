@@ -1,0 +1,21 @@
+.view{
+    border:2px solid lightsteelblue;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: small;
+    padding: 5px;
+    width: 600px;
+    color: #979faf;
+
+}
+.link{
+    color: #2ec866;
+    font-size: 20px;
+}
+.data{
+    color: black;
+}
+.submit{
+    position: relative;
+    left: 200px;
+}

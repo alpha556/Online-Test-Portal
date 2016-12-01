@@ -1,0 +1,12 @@
+{% extends 'exam/base.html' %}
+{% load staticfiles %}c
+{% block css %}
+    <link rel="stylesheet" href="{% static 'exam/submit.css' %}">
+{% endblock %}
+{% block body %}
+<div class="content"><p>
+    Your Result is
+</p>
+<span class="result">{{ score }}/{{ count }}</span>
+</div>
+{% endblock %}
